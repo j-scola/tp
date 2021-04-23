@@ -3,7 +3,30 @@
  * @return {number[]}
  */
 var minOperations = function(boxes) {
-    
+    // solution 1
+    // let boxArray = boxes.split('');
+    // return boxArray.map((num, idx, arr) => {
+    //   let sum = 0;
+    //   arr.forEach((box, arrIdx) => {
+    //     if (box === '1') {
+    //       sum += Math.abs(idx - arrIdx) 
+    //     }
+    //   })
+    //   return sum;
+    // })
+
+    // solution 2
+    const solution = [];
+    for (var i = 0; i < boxes.length; i++) {
+      let sum = 0;
+      for (var j = 0; j < boxes.length; j++) {
+        if (boxes[j] === '1') {
+          sum += Math.abs(i - j) 
+        }
+      }
+      solution.push(sum)
+    }
+    return solution 
 };
 
 
